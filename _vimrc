@@ -180,7 +180,7 @@ set directory=$HOME/vimfiles/tmp/swap/      " remove swap file from being stored
 set viewdir=$HOME/vimfiles/tmp/view/        " viewdir
 
 " Remove trailing whitespaces and ^M chars
-"autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))   
+"autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 let mapleader = ','
 
@@ -191,3 +191,18 @@ set guioptions-=T       " no tabs
 let g:phpqa_messdetector_autorun = 0
 let g:phpqa_codesniffer_autorun = 0
 let g:phpqa_codecoverage_autorun = 0
+
+"remove trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
