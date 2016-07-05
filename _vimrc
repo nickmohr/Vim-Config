@@ -30,8 +30,14 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 syntax enable
-set background=light
-colorscheme xoria256 
-set nu
-
+set background=dark
+colorscheme solarized 
+set nu                          " show line numbers
+set noerrorbells                " turn off error sounds
+set cursorline                  " highlight current line
+set spell                       " spell checking, need to colourise
+set virtualedit=all             " cursor can go anywhere
+set viewoptions=folds,options,cursor,slash,unix                                                   
+set hidden
+set history=1024
 
