@@ -5,6 +5,7 @@
 !_vimrc
 !.gitignore
 .netrwhist
+vimfiles/tmp/
 
 # Compiled source #
 ###################

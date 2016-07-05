@@ -1,7 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set fileencoding=utf-8
-set guifont=consolas:h13
+set encoding=utf-8
+set guifont=consolas:h14
 
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
@@ -12,6 +13,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Bundle 'joonty/vim-phpqa.git'
+Plugin 'stanangeloff/php.vim'
+Plugin 'shawncplus/phpcomplete.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -137,7 +141,7 @@ endif
 
 syntax enable
 set background=dark
-colorscheme solarized 
+colorscheme solarized
 set nu                          " show line numbers
 set noerrorbells                " turn off error sounds
 set cursorline                  " highlight current line
@@ -160,7 +164,7 @@ set tabstop=4                   " an indentation every four columns
 set softtabstop=4               " let backspace delete indent
 
 set list
-set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:▸\ ,trail:.     " Highlight problematic whitespace
 
 set backup                      " backups are nice ...
 set backupdir=$HOME/vimfiles/tmp/backup/
@@ -182,3 +186,8 @@ let mapleader = ','
 
 set guioptions-=m       " no menus
 set guioptions-=T       " no tabs
+
+"PHPQA
+let g:phpqa_messdetector_autorun = 0
+let g:phpqa_codesniffer_autorun = 0
+let g:phpqa_codecoverage_autorun = 0
