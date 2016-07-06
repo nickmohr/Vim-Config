@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set fileencoding=utf-8
 set encoding=utf-8
-set guifont=consolas:h14
+set guifont=consolas:h13
 
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
@@ -16,6 +16,7 @@ Plugin 'bling/vim-airline'
 Bundle 'joonty/vim-phpqa.git'
 Plugin 'stanangeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin '2072/php-indenting-for-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -145,8 +146,8 @@ colorscheme solarized
 set nu                          " show line numbers
 set noerrorbells                " turn off error sounds
 set cursorline                  " highlight current line
-set spell                       " spell checking, need to colourise
-set virtualedit=all             " cursor can go anywhere
+"set spell                       " spell checking, need to colourise
+set virtualedit=onemore         " cursor can go anywhere
 set viewoptions=folds,options,cursor,slash,unix " extra compatibility
 set hidden                      " change buffer without saving
 set history=1024                " lots of history
@@ -157,6 +158,7 @@ set hlsearch                    " highlight search terms
 set ignorecase                  " case insensitive search
 set smartcase                   " case sensitive when uc present
 set wildmenu                    " show list instead of just completing
+set showtabline=2               " always show the tab line
 
 set shiftwidth=4                " use indents of 4 spaces
 set expandtab                   " tabs are spaces, not tabs
@@ -185,12 +187,14 @@ set viewdir=$HOME/vimfiles/tmp/view/        " viewdir
 let mapleader = ','
 
 set guioptions-=m       " no menus
-set guioptions-=T       " no tabs
+set guioptions-=T       " no toolbar
 
 "PHPQA
 let g:phpqa_messdetector_autorun = 0
 let g:phpqa_codesniffer_autorun = 0
 let g:phpqa_codecoverage_autorun = 0
+
+let g:PHP_removeCRwhenUnix = 1  " php remove \r characters
 
 "remove trailing whitespace
 function! <SID>StripTrailingWhitespaces()
@@ -206,3 +210,11 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+"airline stuff
+let g:airline_left_sep='►'
+let g:airline_right_sep='◄'
+let g:airline_detect_spell=0    "turn off airline spell, waste of space
+let g:airline#extensions#branch#enabled = 1
+
+
