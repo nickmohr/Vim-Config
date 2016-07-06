@@ -17,6 +17,7 @@ Bundle 'joonty/vim-phpqa.git'
 Plugin 'stanangeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin '2072/php-indenting-for-vim'
+Plugin 'joonty/vdebug'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
