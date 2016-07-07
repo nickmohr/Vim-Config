@@ -5,8 +5,17 @@
 !vimfiles/
 !vimfiles/colors/*
 .netrwhist
-vimfiles/bundle
-vimfiles/tmp
+vimfiles/bundle/*
+!vimfiles/bundle/.gitkeep
+!vimfiles/tmp/.gitkeep
+vimfiles/tmp/backup/*
+!vimfiles/tmp/backup/.gitkeep
+vimfiles/tmp/swap/*
+!vimfiles/tmp/swap/.gitkeep
+vimfiles/tmp/undo/*
+!vimfiles/tmp/undo/.gitkeep
+vimfiles/tmp/view/*
+!vimfiles/tmp/view/.gitkeep
 
 
 
