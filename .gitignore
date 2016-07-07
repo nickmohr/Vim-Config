@@ -1,12 +1,14 @@
 /*
-/*/
-!vimfiles/
-vimfiles/tmp
-vimfiles/bundle
-!vimfiles/colors/*
-!_vimrc
+/*/	
 !.gitignore
+!_vimrc
+!vimfiles/
+!vimfiles/colors/*
 .netrwhist
+vimfiles/bundle
+vimfiles/tmp
+
+
 
 # Compiled source #
 ###################
