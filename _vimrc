@@ -13,11 +13,14 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
-Bundle 'joonty/vim-phpqa.git'
+"Bundle 'joonty/vim-phpqa.git'
+Plugin 'scrooloose/syntastic' "use syntastic instead
 Plugin 'stanangeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin '2072/php-indenting-for-vim'
-Plugin 'joonty/vdebug'
+Plugin 'joonty/vdebug' "is this even working?
+Plugin 'pangloss/vim-javascript'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -153,6 +156,8 @@ set viewoptions=folds,options,cursor,slash,unix " extra compatibility
 set hidden                      " change buffer without saving
 set history=1024                " lots of history
 set nowrap                      " dont wrap text
+set colorcolumn=80              " visual guide to where text should wrap
+set textwidth=79                " textwidth
 set showmatch                   " show matching brackets/parenthesis
 set incsearch                   " find as you type search
 set hlsearch                    " highlight search terms
@@ -181,9 +186,6 @@ endif
 
 set directory=$HOME/vimfiles/tmp/swap/      " remove swap file from being stored in same directory as edited file
 set viewdir=$HOME/vimfiles/tmp/view/        " viewdir
-
-" Remove trailing whitespaces and ^M chars
-"autocmd FileType c,cpp,java,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 let mapleader = ','
 
@@ -218,4 +220,12 @@ let g:airline_right_sep='◄'
 let g:airline_detect_spell=0    "turn off airline spell, waste of space
 let g:airline#extensions#branch#enabled = 1
 
+"syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
