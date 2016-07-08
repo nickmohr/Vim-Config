@@ -19,7 +19,7 @@ Plugin 'stanangeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin '2072/php-indenting-for-vim'
 Plugin 'joonty/vdebug' "is this even working?
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 
 
 " All of your Plugins must be added before the following line
